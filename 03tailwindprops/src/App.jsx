@@ -2,32 +2,28 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Card from './componant/Card'
 
 function App() {
   const [count, setCount] = useState(0)
+  let obj = {
+    userName: "Man",
+    surname: "Prajapati"
+  }
+
+  let arr = [1, "man", 2]
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <> {/*<></> ise Fragment bolte he*/}
+    {/*sath hi har element closing tag hona chahiye nahi he to use <br /> is type se likh sakte he isme last me / add kar diya he */}
+   <h1 className='bg-green-400 text-black p-4 rounded-xl'>Check Tailwind CSS</h1>
+
+{/* Card ke ander 2 item (object ya array) use ho rhe he isliye ise variable me hold karke object ko show karna pad raha he aur isi tarah hum array bhi pass kar sakte he */}
+    {/* <Card chennal = "Manprajapati" objContainer = {obj}/> */}
+
+    <Card username = "Manprajapati" btntext = "Click me" objContainer = {arr}/>
+    <Card username = "SecondName"  objContainer = {arr}/>
+
     </>
   )
 }
